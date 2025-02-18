@@ -1,1 +1,36 @@
 Este dispositivo puede estar comprometido. Espere la verificación de seguridad...
+import time
+import os
+import random
+
+def warning_message():
+    messages = [
+        "⚠️ BLOCK: Your system is under verification...",
+        "🔒 ATENCION: Security breach detected!",
+        "🚨 CERTIFICAD ERROR: Your access is restricted.",
+        "💀 WARNING: Unauthorized operation detected!",
+        "📛 SYSTEM BLOCKED: Awaiting security clearance...",
+        "🔥 ALERTA: Possible malware infection detected!",
+    ]
+    for _ in range(10):  # Loop para exibir mensagens falsas
+        print(random.choice(messages))
+        time.sleep(1)
+
+def fake_scan():
+    print("\n🔍 Scanning system files...\n")
+    for _ in range(5):
+        print(f"Checking file: C:/system32/{random.randint(10000,99999)}.dll")
+        time.sleep(0.5)
+    print("\n❌ ERROR: Critical files compromised!")
+    time.sleep(2)
+    print("\n🔄 Attempting automatic repair...\n")
+    time.sleep(3)
+    print("✅ System restored. Please restart your device.")
+
+def main():
+    os.system("cls" if os.name == "nt" else "clear")  # Limpa a tela
+    warning_message()
+    fake_scan()
+
+if __name__ == "__main__":
+    main()
